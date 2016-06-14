@@ -1,6 +1,6 @@
 import { Component, Directive, ElementRef } from 'angular2/core';
 import {AnimationBuilder} from 'angular2/src/animate/animation_builder';
-
+// http://stackoverflow.com/questions/34165140/how-does-angular-2-0-for-typescript-alpha-animation-work 참고
 @Directive({
   selector : '[animate-box]',
   exportAs : 'ab'

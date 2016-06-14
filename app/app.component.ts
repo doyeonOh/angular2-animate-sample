@@ -27,11 +27,11 @@ import { Animation2Component } from './animation/animation2.component';
           <p><a [routerLink]= "['MoveImage']">Move Image</a></p>
         </div>
         <div>
-          <p> with animation builder |  </p>
+          <p> with animation builder |  <a href="http://stackoverflow.com/questions/34165140/how-does-angular-2-0-for-typescript-alpha-animation-work">참조</a></p>
           <p><a [routerLink]= "['Animation']">Animation </a></p>
         </div>
         <div>
-          <p> with animation builder 2 | </p>
+          <p> with animation builder 2 | <a href="http://embed.plnkr.co/W7fEIfS6CWAW6HwMJkkG/">참조</a></p>
           <p><a [routerLink]="['Animation2']">Animation2 </a></p>
         </div>
       </section>

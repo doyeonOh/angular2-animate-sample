@@ -1,6 +1,6 @@
 import {Component, Directive, ElementRef, OnInit} from 'angular2/core';
 import {AnimationBuilder} from 'angular2/src/animate/animation_builder';
-
+// http://embed.plnkr.co/W7fEIfS6CWAW6HwMJkkG/ 참고
 @Directive({
     selector: '[scale-element]',
     exportAs: 'se'
