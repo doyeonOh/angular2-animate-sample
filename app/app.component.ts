@@ -4,6 +4,8 @@ import { Page1Component } from './page-transition/page1.component';
 import { Page2Component } from './page-transition/page2.component';
 import { MovetextComponent } from './move-text/move-text.component';
 import { MoveImageComponent } from './move-image/move-image.component';
+import { AnimationComponent } from './animation/animation.component';
+import { Animation2Component } from './animation/animation2.component';
 
 
 @Component({
@@ -24,6 +26,14 @@ import { MoveImageComponent } from './move-image/move-image.component';
           <p> 이미지 움직이기 | Move Image </p>
           <p><a [routerLink]= "['MoveImage']">Move Image</a></p>
         </div>
+        <div>
+          <p> with animation builder |  </p>
+          <p><a [routerLink]= "['Animation']">Animation </a></p>
+        </div>
+        <div>
+          <p> with animation builder 2 | </p>
+          <p><a [routerLink]="['Animation2']">Animation2 </a></p>
+        </div>
       </section>
       <hr/>
       <section>
@@ -41,7 +51,9 @@ import { MoveImageComponent } from './move-image/move-image.component';
   { path: '/page1', name: 'PAGE1', component: Page1Component },
   { path: '/page2', name: 'PAGE2', component: Page2Component },
   { path: '/moveText', name: 'MoveText', component: MovetextComponent },
-  { path: '/moveImage', name: 'MoveImage', component: MoveImageComponent }
+  { path: '/moveImage', name: 'MoveImage', component: MoveImageComponent },
+  { path: '/animation', name: 'Animation', component: AnimationComponent },
+  { path: '/animation2', name: 'Animation2', component: Animation2Component }
 ])
 
 export class AppComponent{
