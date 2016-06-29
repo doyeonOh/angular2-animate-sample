@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+// animation 개편되서 안 돌아감
 @Component({
   selector: 'page1',
   template: `

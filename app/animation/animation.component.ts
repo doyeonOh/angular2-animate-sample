@@ -1,45 +1,40 @@
-// import { Component, Directive, ElementRef } from '@angular/core';
-// import {AnimationBuilder} from 'angular2/src/animate/animation_builder';
-// // http://stackoverflow.com/questions/34165140/how-does-angular-2-0-for-typescript-alpha-animation-work 참고
-// @Directive({
-//   selector : '[animate-box]',
-//   exportAs : 'ab'
-// })
-// class AnimateBox{
-//   constructor(private _ab: AnimationBuilder, private _e: ElementRef) {}
-//
-//   toggle(isVisible: boolean = false){
-//     let animation = this._ab.css();
-//
-//     animation.setDuration(1000);
-//
-//     if(!isVisible){
-//       animation.setFromStyles({height:'0', width: '50%', overflow: 'hidden'})
-//         .setToStyles({height: '300px'})
-//     }else{
-//       animation.setFromStyles({height:'300px', width: '50%'})
-//         .setToStyles({height: '0'})
-//     }
-//
-//     animation.start(this._e.nativeElement);
-//   }
-// }
-//
-//
-// @Component({
-//   selector: 'animation-ex',
-//   template: `
-//     <div animate-box #box="ab"  style="height:0; width:50%; overflow: hidden;">Some content</div>
-//     <button (click)="box.toggle(visible = !visible)">Animate</button>
-//   `,
-//   directives: [
-//     AnimateBox
-//   ],
-//   styles: [`
-//
-//   `]
-// })
-//
-// export class AnimationComponent {
-//
-// }
+import { Component, Directive, ElementRef, trigger, state, style, transition, animate} from '@angular/core';
+
+@Component({
+  selector: 'animation-ex',
+  template: `
+    <div @animState="state">Some content</div>
+    <button (click)="toggle()">Animate</button>
+  `,
+  styles: [`
+
+  `],
+  animations: [
+    trigger('animState', [
+      state('inactive', style({
+        "height" :'0',
+        "width" :'50%',
+        "overflow": "hidden"
+      })),
+      state('active', style({
+        "height": '300px',
+        "background-color": '#f2f'
+      })),
+      transition('inactive => active', animate('1000ms ease-in')),
+      transition('active => inactive', animate('1000ms ease-out'))
+    ])
+  ]
+})
+
+export class AnimationComponent {
+  state: string = "inactive";
+
+  toggle(){
+    if(this.state == "active"){
+      this.state = "inactive";
+    }else{
+      this.state = "active";
+    }
+    console.log(this.state);
+  }
+}
